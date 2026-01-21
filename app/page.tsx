@@ -49,16 +49,16 @@ export default function LandingPage() {
   const [carouselIndex, setCarouselIndex] = useState(0);
   const carouselItems = [
     {
-      title: "Get ₹200 cashback on mobile app download",
-      sub: "Available on Play Store & App Store",
+      title: "Available on stores",
+      sub: "Play Store|App Store",
     },
     {
       title: "No return fare",
-      sub: "One-Way fare | No hidden charges | Minimal advance",
+      sub: "One-Way fare-Minimal advance",
     },
     {
       title: "No over-pricing",
-      sub: "Cheapest costs | Competitive prices | Pay as you go",
+      sub: "Cheapest costs | Pay as you go",
     },
   ];
 
@@ -70,16 +70,25 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-500">
+    <div className="min-h-screen bg-white font-sans text-slate-500 w-full">
       {/* HEADER */}
-      <header className="fixed top-0 left-0 right-0 h-20 bg-black/90 z-50 flex items-center px-4 md:px-20">
+      <header className="fixed top-0 left-0 right-0 h-20 bg-black/90 z-50 flex items-center px-4 md:px-8 max-[375]:w-[375px]">
         <div className="container mx-auto">
           <div className="flex items-center justify-center">
-            <div className="p-1 rounded">
+            <div className="p-1 text-center">
               <span
-                className={`font-bold text-white text-4xl max-[768]:text-3xl tracking-loose ${juicy.className} text-center`}
+                className={`
+            ${juicy.className} 
+            block
+            text-white 
+            font-bold 
+            tracking-tight
+            text-2xl     /* Default for mobile */
+            sm:text-3xl  /* Tablets */
+            md:text-4xl  /* Desktop */
+          `}
               >
-                Devine Cab
+                Bansal Travels
               </span>
             </div>
           </div>
@@ -88,12 +97,12 @@ export default function LandingPage() {
 
       {/* HERO SECTION */}
       <section
-        className="relative mt-20 min-h-[600px] flex flex-col items-center pt-10 pb-20 px-4 bg-cover bg-center"
+        className="relative mt-20 min-h-[600px] flex flex-col items-center pt-10 pb-20 px-4 bg-cover bg-center w-full"
         style={{
           backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('/retro-cab-image.avif')`,
         }}
       >
-        <div className="container mx-auto flex gap-10 ">
+        <div className="container mx-auto flex gap-10 w-full">
           <div className="pt-10 w-full">
             <h1
               className={`text-8xl  mb-6 text-white ${lavishly.className} flex flex-col gap-10 text-center`}
@@ -109,7 +118,7 @@ export default function LandingPage() {
 
         {/* BOTTOM FEATURE CAROUSEL */}
         <div className="container mx-auto mt-20">
-          <div className="bg-white border border-gray-200 shadow-xl rounded-full py-6 px-10 max-w-4xl mx-auto overflow-hidden relative">
+          <div className="bg-white border border-gray-200 shadow-xl rounded-full py-6 px-10 max-w-4xl mx-auto overflow-hidden relative max-[400px]:w-[355px]">
             <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${carouselIndex * 100}%)` }}
@@ -119,8 +128,12 @@ export default function LandingPage() {
                   key={idx}
                   className="min-w-full text-center flex flex-col items-center"
                 >
-                  <span className="font-bold text-gray-800 text-center inline-block max-[768]:w-[250px]">{item.title}</span>
-                  <span className="text-sm text-gray-500 max-[768]:w-[250px]">{item.sub}</span>
+                  <span className="font-bold text-gray-800 text-center inline-block max-[768]:w-[250px]">
+                    {item.title}
+                  </span>
+                  <span className="text-sm text-gray-500 max-[768]:w-[250px] text-center">
+                    {item.sub}
+                  </span>
                 </div>
               ))}
             </div>
@@ -134,7 +147,7 @@ export default function LandingPage() {
         <div className="flex gap-20 max-[1024]:flex-col justify-center items-center">
           <div className="w-[50%] max-[1024]:w-full justify-center items-center">
             <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100 w-[100%]">
-              <div className="bg-slate-600 py-2 text-center font-medium text-lg">
+              <div className="bg-slate-950 text-white py-2 text-center font-medium text-lg">
                 All India Cab Service
               </div>
 
@@ -143,14 +156,14 @@ export default function LandingPage() {
                 <div className="flex gap-2 mb-6">
                   <button
                     onClick={() => setTripType("outstation")}
-                    className={`flex-1 py-3 px-4 rounded-xl font-bold transition-all ${tripType === "outstation" ? "bg-slate-600" : "bg-gray-100 hover:bg-gray-200"}`}
+                    className={`flex-1 py-3 px-4 rounded-xl bg-slate-950 text-white font-bold transition-all ${tripType === "outstation" ? "bg-slate-600" : "bg-gray-100 hover:bg-gray-200"}`}
                   >
                     Outstation
                   </button>
                 </div>
 
                 {tripType === "outstation" && (
-                  <div className="space-y-4">
+                  <div className="space-y-4 text-black">
                     <div className="flex gap-2 mb-4">
                       <label className="flex-1 flex items-center gap-2 p-3 bg-gray-50 rounded-xl cursor-pointer">
                         <input
@@ -161,7 +174,7 @@ export default function LandingPage() {
                         />
                         <span className="text-sm">Round Trip</span>
                       </label>
-                      <label className="flex-1 flex items-center gap-2 p-3 bg-gray-50 rounded-xl cursor-pointer">
+                      <label className="flex-1 flex items-center gap-2 p-3 bg-gray-50 text-black rounded-xl cursor-pointer">
                         <input
                           type="radio"
                           checked={outstationType === "one-way"}
@@ -212,7 +225,7 @@ export default function LandingPage() {
                       </div>
                     </div>
 
-                    <button className="w-full bg-slate-600 hover:bg-black hover:text-white py-4 rounded-xl font-bold text-lg transition-colors shadow-lg active:scale-95">
+                    <button className="w-full bg-swhite text-slate-950 border-2 border-black hover:bg-slate-950 hover:text-white cursor-pointer py-4 rounded-xl font-bold text-lg transition-colors shadow-lg active:scale-95">
                       Check Price & Book Cab
                     </button>
                   </div>
@@ -221,14 +234,14 @@ export default function LandingPage() {
             </div>
           </div>
 
-          <div className="pt-10 w-[50%] max-[1024]:w-full flex flex-col">
+          <div className="pt-10 w-[50%] max-[1024]:w-full flex flex-col text-slate-950">
             <h1 className="text-5xl font-light text-center flex flex-col gap-10">
               Zirakpur to Manali cab at <span className="font-bold">₹3113</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 text-center">
               Upto 20% off on your first booking
             </p>
-            <div className="flex gap-6 max-[1024]:justify-center">
+            <div className="flex gap-6 max-[1024]:justify-center justify-center">
               <div className="flex items-center gap-2 bg-white/80 p-3 rounded-lg border border-gray-200">
                 <Star className="text-[#fdb813]" fill="#fdb813" size={20} />
                 <span className="font-bold text-lg">4.2/5</span>
@@ -243,28 +256,28 @@ export default function LandingPage() {
               <Car className="text-[#fdb813]" size={32} />
             </div>
             <h3 className="text-gray-500 italic">Taxi service</h3>
-            <p className="font-bold text-xl">Since 2025</p>
+            <p className="font-bold text-xl text-slate-950">Since 2025</p>
           </div>
           <div className="flex flex-col items-center text-center">
             <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4 shadow-sm">
               <Star className="text-[#fdb813]" fill="#fdb813" size={32} />
             </div>
             <h3 className="text-gray-500 italic">Customer reviews</h3>
-            <p className="font-bold text-xl">Rated 4.2/5</p>
+            <p className="font-bold text-xl text-slate-950">Rated 4.2/5</p>
           </div>
           <div className="flex flex-col items-center text-center">
             <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4 shadow-sm">
               <span className="text-[#fdb813] text-2xl font-bold">₹</span>
             </div>
             <h3 className="text-gray-500 italic">Price starts from</h3>
-            <p className="font-bold text-xl">₹11/km</p>
+            <p className="font-bold text-xl text-slate-950">₹11/km</p>
           </div>
         </div>
       </section>
 
       {/* PRICING TABLE SECTION */}
       <section className="py-20 container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-10 text-center md:text-left">
+        <h2 className="text-3xl font-bold mb-10 text-center md:text-left text-slate-950">
           Zirakpur to Manali Cab Price Starts From
         </h2>
         <div className="grid md:grid-cols-4 gap-6">
@@ -305,11 +318,11 @@ export default function LandingPage() {
                 height={100}
                 className="mx-auto h-24 object-contain mb-4"
               />
-              <h3 className="font-bold text-lg mb-2">{item.model}</h3>
+              <h3 className="font-bold text-lg mb-2 text-slate-950">{item.model}</h3>
               <span className="inline-block bg-slate-900 px-3 py-1 rounded text-sm mb-3 text-white">
                 {item.seats} seats
               </span>
-              <p className="text-2xl font-bold">₹{item.price}</p>
+              <p className="text-2xl font-bold text-slate-950">₹{item.price}</p>
             </div>
           ))}
         </div>
@@ -318,7 +331,7 @@ export default function LandingPage() {
       {/* CONTENT SECTION */}
       <section className="bg-white py-16">
         <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12">
-          <div className="space-y-6 text-gray-700 leading-relaxed">
+          <div className="space-y-6 text-slate-950 leading-relaxed">
             <h2 className="text-4xl font-light">Book Zirakpur to Manali Cab</h2>
             <div className="flex gap-4 text-sm font-bold uppercase tracking-wider text-gray-400">
               <span>Distance: 283 KM</span>
@@ -333,14 +346,14 @@ export default function LandingPage() {
             <p>
               Old Manali is my favorite spot. It has many homestays and hostels.
               People can stay for a long time. Cheap dorm beds are available.
-              Devine Cab offers reliable outstation cabs. You can enjoy one-way
+              Bansal Travels offers reliable outstation cabs. You can enjoy one-way
               drops easily. This makes your trip comfortable.
             </p>
           </div>
           <div>
             <Image
               src="/manali.jpg"
-              className="w-full h-100 object-cover rounded-3xl shadow-xl border-15 border-[#fdb813]/10"
+              className="w-full h-100 object-cover rounded-3xl shadow-xl border-15 border-slate-950/10"
               alt="Manali"
               width={200}
               height={200}
@@ -352,7 +365,7 @@ export default function LandingPage() {
       {/* ROUTE INFO SECTION */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12">
+          <h2 className="text-3xl font-bold mb-12 text-slate-950">
             Popular Stops & Route Information
           </h2>
           <div className="grid md:grid-cols-2 gap-10">
@@ -381,7 +394,7 @@ export default function LandingPage() {
               ].map((stop, i) => (
                 <div
                   key={i}
-                  className="bg-white p-5 rounded-xl border-l-4 border-[#fdb813] shadow-sm"
+                  className="bg-white p-5 rounded-xl border-l-4 border-slate-800 shadow-sm"
                 >
                   <span className="font-bold block text-lg mb-1">
                     {i + 1}. {stop.name}
@@ -391,10 +404,10 @@ export default function LandingPage() {
               ))}
             </div>
             <div className="bg-white p-8 rounded-3xl shadow-sm space-y-6">
-              <h3 className="text-2xl font-bold">Frequently Asked Questions</h3>
+              <h3 className="text-2xl font-bold text-slate-950">Frequently Asked Questions</h3>
               <div className="space-y-4">
                 <details className="group border-b border-gray-100 pb-4" open>
-                  <summary className="list-none flex justify-between items-center font-bold cursor-pointer group-open:text-[#fdb813]">
+                  <summary className="list-none flex justify-between items-center font-bold cursor-pointer group-open:text-gray-950">
                     What is the distance?
                     <ChevronDown
                       size={20}
@@ -406,7 +419,7 @@ export default function LandingPage() {
                   </p>
                 </details>
                 <details className="group border-b border-gray-100 pb-4">
-                  <summary className="list-none flex justify-between items-center font-bold cursor-pointer group-open:text-[#fdb813]">
+                  <summary className="list-none flex justify-between items-center font-bold cursor-pointer group-open:text-gray-950">
                     Is toll tax included?
                     <ChevronDown
                       size={20}
@@ -424,11 +437,11 @@ export default function LandingPage() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-[#1e1e1e] text-white pt-20 pb-10">
+      <footer className="bg-gray-950 text-white pt-20 pb-10">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
             <div>
-              <h5 className="font-bold text-[#fdb813] mb-6">CAB FROM DELHI</h5>
+              <h5 className="font-bold text-slate-50 mb-6 cursor-pointer">CAB FROM DELHI</h5>
               <ul className="space-y-3 text-sm text-gray-400">
                 <li className="hover:text-white cursor-pointer">
                   Taxi from Delhi to Agra
@@ -442,7 +455,7 @@ export default function LandingPage() {
               </ul>
             </div>
             <div>
-              <h5 className="font-bold text-[#fdb813] mb-6">
+              <h5 className="font-bold text-slate-200 mb-6 cursor-pointer">
                 CAB FROM BANGALORE
               </h5>
               <ul className="space-y-3 text-sm text-gray-400">
@@ -458,7 +471,7 @@ export default function LandingPage() {
               </ul>
             </div>
             <div>
-              <h5 className="font-bold text-[#fdb813] mb-6">RESOURCES</h5>
+              <h5 className="font-bold text-slate-50 mb-6 cursor-pointer">RESOURCES</h5>
               <ul className="space-y-3 text-sm text-gray-400">
                 <li className="hover:text-white cursor-pointer">
                   Privacy Policy
@@ -470,7 +483,7 @@ export default function LandingPage() {
               </ul>
             </div>
             <div>
-              <h5 className="font-bold text-[#fdb813] mb-6">CONTACT</h5>
+              <h5 className="font-bold text-slate-50 mb-6 cursor-pointer">CONTACT</h5>
               <p className="text-sm text-gray-400 mb-4">
                 Support: support@devineCab.com
               </p>
@@ -484,13 +497,16 @@ export default function LandingPage() {
 
           <hr className="border-gray-800 mb-8" />
 
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex max-[768]:flex-col items-center gap-4">
-              <div className={`p-1 rounded font-bold text-white px-4 ${lavishly.className} tracking-wider text-2xl`}>
-                DEVINE CAB
+          <div className="flex flex-col md:flex-row justify-center items-center gap-6">
+            <div className="flex flex-col max-[768]:flex-col items-center gap-4 justify-center">
+              <div
+                className={`p-1 rounded font-bold text-white px-4 ${lavishly.className} tracking-wider text-2xl`}
+              >
+                Bansal Travels
               </div>
-              <p className="text-xs text-gray-500">
-                Copyright © 2026 Devine Cab Private Limited. All rights reserved.
+              <p className="text-xs text-gray-500 text-center">
+                Copyright © 2026 Bansal Travels Private Limited. All rights
+                reserved.
               </p>
             </div>
           </div>
@@ -498,8 +514,8 @@ export default function LandingPage() {
       </footer>
 
       {/* MOBILE TAGLINE STICKY */}
-      <div className="bottom-0 left-0 right-0 bg-slate-600 py-2 text-center text-sm font-bold z-50">
-        India moves with Devine Cab !!
+      <div className="bottom-0 left-0 right-0 bg-slate-950 text-gray-400 py-2 text-center text-sm font-bold z-50">
+        India moves with Bansal Travels !!
       </div>
     </div>
   );
