@@ -30,6 +30,9 @@ export const metadata: Metadata = {
       url: "/bansal_travels.jpeg",
     },
   },
+  verification: {
+    google: "pSOhu8nPhJFKNmvNueSPOcJUs5zicvNx-yp6BXUYj-w",
+  },
 };
 
 export default function RootLayout({
