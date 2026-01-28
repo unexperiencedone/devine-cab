@@ -610,19 +610,19 @@ export default function PremiumLandingPage() {
                 },
                 {
                   q: "How long does it take from Zirakpur to Manali by road?",
-                  a: "It takes approx. 6.5 to 8.5 hours depending on traffic."
+                  a: "It takes approx. 6.5 to 8.5 hours depending on traffic.",
                 },
                 {
                   q: "Can I book cab for Zirakpur to Manali by calling customer support?",
-                  a: "We are happy to provide you any clarifications required through customer support team but Zirakpur to Manali cab booking has to be done either through our website or through our android and iOS mobile app 'CabBazar - Outstation taxi'."
+                  a: "We are happy to provide you any clarifications required through customer support team but Zirakpur to Manali cab booking has to be done either through our website or through our android and iOS mobile app 'CabBazar - Outstation taxi'.",
                 },
                 {
                   q: "Do I need to pay both side Toll tax for Zirakpur to Manali one way cab?",
-                  a: "For Zirakpur to Manali One way cab, you need to pay one side Toll tax only."
+                  a: "For Zirakpur to Manali One way cab, you need to pay one side Toll tax only.",
                 },
                 {
                   q: "Can we pickup additional passengers on the way in Zirakpur to Manali one way taxi?",
-                  a: "You may book Zirakpur to Manali One way multi-stop cab by adding additional stops in itinerary.For Zirakpur to Manali One way taxi with only Zirakpur and Manali in itinerary, Additional pickup or drop will incur additional charges."
+                  a: "You may book Zirakpur to Manali One way multi-stop cab by adding additional stops in itinerary.For Zirakpur to Manali One way taxi with only Zirakpur and Manali in itinerary, Additional pickup or drop will incur additional charges.",
                 },
               ].map((faq, i) => (
                 <details
@@ -824,11 +824,48 @@ export default function PremiumLandingPage() {
       </section>
 
       {/* --- FOOTER --- */}
-      {/* --- PREMIUM FOOTER --- */}
-      {/* --- LIGHT PREMIUM FOOTER --- */}
       <footer className="bg-white border-t border-slate-100 pt-24 pb-16 overflow-hidden">
         <div className="container mx-auto px-6">
           {/* Main Grid: 4 Columns on Desktop */}
+          {/* --- POPULAR CITIES SECTION (Top of Footer) --- */}
+          <div className="mb-20 pb-16 border-b border-slate-100">
+            <div className="flex flex-col items-center text-center">
+              <span className="text-amber-600 font-bold text-[9px] uppercase tracking-[0.4em] mb-6">
+                Our Primary Network Hubs
+              </span>
+              <div className="flex flex-wrap justify-center gap-x-6 gap-y-4 max-w-5xl">
+                {[
+                  "Amritsar",
+                  "Bathinda",
+                  "Beas",
+                  "Budhlada",
+                  "Chandigarh",
+                  "Dhuri",
+                  "Faridkot",
+                  "Fazilka",
+                  "Firozpur",
+                  "Gobindgarh",
+                  "Gurdaspur",
+                  "Hoshiarpur",
+                  "Jagraon",
+                  "Jalandhar",
+                  "Kharar",
+                  "Ludhiana",
+                  "Mohali",
+                  "Zirakpur",
+                ].map((city, idx, arr) => (
+                  <React.Fragment key={city}>
+                    <span className="text-slate-400 hover:text-slate-900 transition-colors cursor-default text-[11px] font-bold uppercase tracking-widest">
+                      {city}
+                    </span>
+                    {idx !== arr.length - 1 && (
+                      <span className="text-amber-200 font-light">|</span>
+                    )}
+                  </React.Fragment>
+                ))}
+              </div>
+            </div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
             {/* 1. Brand & Mission */}
             <div className="space-y-8">
