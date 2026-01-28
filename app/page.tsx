@@ -558,14 +558,279 @@ export default function PremiumLandingPage() {
           </div>
         </div>
       </section>
+      {/* --- FAQ SECTION --- */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row gap-16">
+            <div className="md:w-1/3">
+              <span className="text-amber-600 font-bold text-xs uppercase tracking-[0.3em] block mb-4">
+                Assistance
+              </span>
+              <h2
+                className={`${playfair.className} text-4xl font-black text-slate-950 mb-6`}
+              >
+                Frequently Asked <br /> Questions
+              </h2>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                Everything you need to know about your journey from Zirakpur to
+                Manali. For specific requirements, our 24/7 concierge is just a
+                call away.
+              </p>
+            </div>
+
+            <div className="md:w-2/3 space-y-4">
+              {[
+                {
+                  q: "What is the distance and travel time?",
+                  a: "The distance from Zirakpur to Manali is 283 km, taking approximately 6.5 to 8.5 hours depending on traffic and seasonal conditions.",
+                },
+                {
+                  q: "What are the taxi fares for Sedan and SUV?",
+                  a: "Zirakpur to Manali taxi fare starts at approx. ₹3,113 for a premium sedan (Etios, Dzire) and approx. ₹4,245 for an SUV. Innova Crysta starts at approx. ₹5,245.",
+                },
+                {
+                  q: "Are driver and night charges included?",
+                  a: "Yes, our transparent pricing includes all Driver and Night charges for the Zirakpur to Manali route.",
+                },
+                {
+                  q: "Is local sightseeing included?",
+                  a: "Sightseeing is included for Round Trips and One-Way Multi-stop bookings. For standard One-Way point-to-point transfers, sightseeing is not included.",
+                },
+                {
+                  q: "Can I travel with my pets?",
+                  a: "Absolutely. We are pet-friendly. Please select the 'Pet Allowed' add-on during booking (additional charges apply).",
+                },
+                {
+                  q: "Do I need to pay the full amount in advance?",
+                  a: "No, you only need to pay a 10-20% confirmation deposit to secure your premium vehicle.",
+                },
+                {
+                  q: "How are toll taxes handled for one-way trips?",
+                  a: "For one-way journeys, you are only required to pay the one-side toll tax, ensuring you don't pay for the return leg.",
+                },
+                {
+                  q: "How long does it take from Zirakpur to Manali by road?",
+                  a: "It takes approx. 6.5 to 8.5 hours depending on traffic."
+                },
+                {
+                  q: "Can I book cab for Zirakpur to Manali by calling customer support?",
+                  a: "We are happy to provide you any clarifications required through customer support team but Zirakpur to Manali cab booking has to be done either through our website or through our android and iOS mobile app 'CabBazar - Outstation taxi'."
+                },
+                {
+                  q: "Do I need to pay both side Toll tax for Zirakpur to Manali one way cab?",
+                  a: "For Zirakpur to Manali One way cab, you need to pay one side Toll tax only."
+                },
+                {
+                  q: "Can we pickup additional passengers on the way in Zirakpur to Manali one way taxi?",
+                  a: "You may book Zirakpur to Manali One way multi-stop cab by adding additional stops in itinerary.For Zirakpur to Manali One way taxi with only Zirakpur and Manali in itinerary, Additional pickup or drop will incur additional charges."
+                },
+              ].map((faq, i) => (
+                <details
+                  key={i}
+                  className="group border-b border-slate-100 pb-4"
+                >
+                  <summary className="flex items-center justify-between cursor-pointer list-none py-4">
+                    <span className="font-bold text-slate-950 text-sm">
+                      {faq.q}
+                    </span>
+                    <span className="text-amber-600 transition-transform group-open:rotate-180">
+                      <ChevronRight size={18} />
+                    </span>
+                  </summary>
+                  <p className="text-slate-500 text-sm leading-relaxed pb-4 px-2">
+                    {faq.a}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- SERVICE DIRECTORY CARDS --- */}
+      <section className="py-24 bg-slate-50/50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className={`${playfair.className} text-4xl font-bold mb-4`}>
+              Explore Our Network
+            </h2>
+            <div className="w-20 h-1 bg-amber-600 mx-auto"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Card 1 */}
+            <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100">
+              <h3 className="font-black text-xs uppercase tracking-widest text-amber-600 mb-6 flex items-center gap-2">
+                <Navigation size={14} /> From Zirakpur
+              </h3>
+              <div className="grid grid-cols-1 gap-3 text-[11px] font-bold text-slate-600">
+                {[
+                  "Bhiwadi",
+                  "Anandpur-sahib",
+                  "Jagraon",
+                  "Kot-kapura",
+                  "Lohaghat",
+                  "Chopta",
+                  "Kotdwar",
+                  "Panna",
+                  "Joshimath",
+                ].map((city) => (
+                  <a
+                    key={city}
+                    href="#"
+                    className="hover:text-amber-600 border-b border-slate-50 pb-1"
+                  >
+                    Zirakpur to {city}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100">
+              <h3 className="font-black text-xs uppercase tracking-widest text-amber-600 mb-6 flex items-center gap-2">
+                <MapPin size={14} /> To Manali
+              </h3>
+              <div className="grid grid-cols-1 gap-3 text-[11px] font-bold text-slate-600">
+                {[
+                  "Aligarh",
+                  "Karnal",
+                  "Kanpur",
+                  "Gwalior",
+                  "Pushkar",
+                  "Etawah",
+                  "Pauri",
+                  "Fazilka",
+                  "Naura",
+                ].map((city) => (
+                  <a
+                    key={city}
+                    href="#"
+                    className="hover:text-amber-600 border-b border-slate-50 pb-1"
+                  >
+                    {city} to Manali
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100">
+              <h3 className="font-black text-xs uppercase tracking-widest text-amber-600 mb-6 flex items-center gap-2">
+                <Clock size={14} /> Hourly Rentals
+              </h3>
+              <div className="grid grid-cols-1 gap-3 text-[11px] font-bold text-slate-600">
+                {[
+                  "Zirakpur",
+                  "Nagpur",
+                  "Ooty",
+                  "Kolkata",
+                  "Noida",
+                  "Jaipur",
+                  "Rishikesh",
+                  "Shirdi",
+                  "Vellore",
+                ].map((city) => (
+                  <a
+                    key={city}
+                    href="#"
+                    className="hover:text-amber-600 border-b border-slate-50 pb-1"
+                  >
+                    Hourly Rental in {city}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Card 4 */}
+            <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100">
+              <h3 className="font-black text-xs uppercase tracking-widest text-amber-600 mb-6 flex items-center gap-2">
+                <ShieldCheck size={14} /> Other Cities
+              </h3>
+              <div className="grid grid-cols-1 gap-3 text-[11px] font-bold text-slate-600">
+                {[
+                  "Tumkur",
+                  "Kedarnath",
+                  "Indore",
+                  "Panjim",
+                  "Sangla",
+                  "Aurangabad",
+                  "Baga",
+                  "Ballabgarh",
+                ].map((city) => (
+                  <a
+                    key={city}
+                    href="#"
+                    className="hover:text-amber-600 border-b border-slate-50 pb-1"
+                  >
+                    Taxi Service in {city}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Card 5 */}
+            <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100">
+              <h3 className="font-black text-xs uppercase tracking-widest text-amber-600 mb-6 flex items-center gap-2">
+                <Car size={14} /> Airport Cabs
+              </h3>
+              <div className="grid grid-cols-1 gap-3 text-[11px] font-bold text-slate-600">
+                {[
+                  "Chandigarh",
+                  "Amritsar",
+                  "Indore",
+                  "Goa",
+                  "Bangalore",
+                  "Hyderabad",
+                  "Jaipur",
+                  "Kochi",
+                ].map((city) => (
+                  <a
+                    key={city}
+                    href="#"
+                    className="hover:text-amber-600 border-b border-slate-50 pb-1"
+                  >
+                    {city} Airport Cabs
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Card 6 */}
+            <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100">
+              <h3 className="font-black text-xs uppercase tracking-widest text-amber-600 mb-6 flex items-center gap-2">
+                <Navigation size={14} /> From Chandigarh Airport
+              </h3>
+              <div className="grid grid-cols-1 gap-3 text-[11px] font-bold text-slate-600">
+                {[
+                  "Uttarkashi",
+                  "Ratlam",
+                  "Vijaypur",
+                  "Sumerpur",
+                  "Samdhan",
+                ].map((city) => (
+                  <a
+                    key={city}
+                    href="#"
+                    className="hover:text-amber-600 border-b border-slate-50 pb-1"
+                  >
+                    Chd Airport to {city}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* --- FOOTER --- */}
       {/* --- PREMIUM FOOTER --- */}
       {/* --- LIGHT PREMIUM FOOTER --- */}
       <footer className="bg-white border-t border-slate-100 pt-24 pb-16 overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
-            {/* Brand & Mission */}
+          {/* Main Grid: 4 Columns on Desktop */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+            {/* 1. Brand & Mission */}
             <div className="space-y-8">
               <div>
                 <h3
@@ -575,23 +840,23 @@ export default function PremiumLandingPage() {
                 </h3>
                 <p className="text-slate-500 text-sm leading-relaxed max-w-xs font-medium">
                   Redefining luxury road travel in Northern India. From local
-                  commutes to Himalayan expeditions, we ensure every mile is an
-                  experience in elegance.
+                  commutes to Himalayan expeditions, we ensure elegance in every
+                  mile.
                 </p>
               </div>
               <div className="flex gap-4">
                 {[
-                  { Icon: Instagram, href: "#", label: "Instagram" },
-                  { Icon: Twitter, href: "#", label: "Twitter" },
-                  { Icon: Linkedin, href: "#", label: "LinkedIn" },
-                  { Icon: Facebook, href: "#", label: "Facebook" },
+                  { Icon: Instagram, label: "Instagram" },
+                  { Icon: Twitter, label: "Twitter" },
+                  { Icon: Linkedin, label: "LinkedIn" },
+                  { Icon: Facebook, label: "Facebook" },
                 ].map(({ Icon, label }, idx) => (
                   <motion.a
                     key={idx}
                     href="#"
                     aria-label={label}
-                    whileHover={{ y: -3, borderColor: "#d97706" }}
-                    className="w-10 h-10 rounded-full border border-slate-100 flex items-center justify-center text-slate-400 hover:text-amber-600 hover:border-amber-100 hover:bg-amber-50 transition-all duration-300"
+                    whileHover={{ y: -3 }}
+                    className="w-10 h-10 rounded-full border border-slate-100 flex items-center justify-center text-slate-400 hover:text-amber-600 hover:bg-amber-50 transition-all duration-300"
                   >
                     <Icon size={18} strokeWidth={1.5} />
                   </motion.a>
@@ -599,133 +864,172 @@ export default function PremiumLandingPage() {
               </div>
             </div>
 
-            {/* Services Grid */}
+            {/* 2. Services List */}
             <div>
               <h4 className="font-bold text-[10px] uppercase tracking-[0.3em] text-slate-400 mb-8">
                 Our Services
               </h4>
               <ul className="space-y-4 text-slate-600 text-sm font-semibold">
-                <li className="hover:text-amber-600 transition-colors cursor-pointer flex items-center gap-2 group">
-                  <ChevronRight
-                    size={12}
-                    className="text-slate-300 group-hover:text-amber-600 group-hover:translate-x-1 transition-all"
-                  />
-                  One Way Outstation
-                </li>
-                <li className="hover:text-white transition-colors cursor-pointer flex items-center gap-2 group">
-                  <ChevronRight
-                    size={12}
-                    className="text-slate-300 group-hover:text-amber-600 group-hover:translate-x-1 transition-all"
-                  />
-                  Round Trip Journeys
-                </li>
-                <li className="hover:text-white transition-colors cursor-pointer flex items-center gap-2 group">
-                  <ChevronRight
-                    size={12}
-                    className="text-slate-300 group-hover:text-amber-600 group-hover:translate-x-1 transition-all"
-                  />
-                  Airport Transfers
-                </li>
-                <li className="hover:text-white transition-colors cursor-pointer flex items-center gap-2 group">
-                  <ChevronRight
-                    size={12}
-                    className="text-slate-300 group-hover:text-amber-600 group-hover:translate-x-1 transition-all"
-                  />
-                  Corporate Fleet
-                </li>
+                {[
+                  "One Way Outstation",
+                  "Round Trip Journeys",
+                  "Airport Transfers",
+                  "Corporate Fleet",
+                ].map((service) => (
+                  <li
+                    key={service}
+                    className="hover:text-amber-600 transition-colors cursor-pointer flex items-center gap-2 group"
+                  >
+                    <ChevronRight
+                      size={12}
+                      className="text-slate-300 group-hover:text-amber-600 group-hover:translate-x-1 transition-all"
+                    />
+                    {service}
+                  </li>
+                ))}
               </ul>
             </div>
 
-            {/* Popular Routes */}
+            {/* 3. Reach Us & Trust */}
+            <div className="space-y-8">
+              <h4 className="font-bold text-[10px] uppercase tracking-[0.3em] text-slate-400 mb-8">
+                Reach Us
+              </h4>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4 group cursor-pointer">
+                  <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center group-hover:bg-amber-50 transition-colors">
+                    <Phone
+                      size={18}
+                      className="text-slate-400 group-hover:text-amber-600"
+                    />
+                  </div>
+                  <div>
+                    <p className="text-[10px] text-slate-400 uppercase font-bold tracking-widest">
+                      24/7 Concierge
+                    </p>
+                    <p className="text-sm font-bold text-slate-900">
+                      +91 98765 43210
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4 group cursor-pointer">
+                  <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center group-hover:bg-amber-50 transition-colors">
+                    <ShieldCheck
+                      size={18}
+                      className="text-slate-400 group-hover:text-amber-600"
+                    />
+                  </div>
+                  <div>
+                    <p className="text-[10px] text-slate-400 uppercase font-bold tracking-widest">
+                      Verified Safety
+                    </p>
+                    <p className="text-sm font-bold text-slate-900">
+                      Elite Protocol
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 4. One specific Top Destination Column to fill the 4th slot on desktop */}
             <div>
               <h4 className="font-bold text-[10px] uppercase tracking-[0.3em] text-slate-400 mb-8">
                 Top Destinations
               </h4>
               <ul className="space-y-4 text-slate-600 text-sm font-semibold">
-                <li className="hover:text-amber-600 transition-colors cursor-pointer">
-                  Zirakpur to Manali
-                </li>
-                <li className="hover:text-amber-600 transition-colors cursor-pointer">
-                  Chandigarh to Delhi
-                </li>
-                <li className="hover:text-amber-600 transition-colors cursor-pointer">
-                  Delhi to Jaipur
-                </li>
-                <li className="hover:text-amber-600 transition-colors cursor-pointer">
-                  Shimla Executive
-                </li>
+                {[
+                  "Zirakpur to Manali",
+                  "Chandigarh to Delhi",
+                  "Delhi to Jaipur",
+                  "Shimla Executive",
+                ].map((route) => (
+                  <li
+                    key={route}
+                    className="hover:text-amber-600 transition-colors cursor-pointer"
+                  >
+                    {route}
+                  </li>
+                ))}
               </ul>
             </div>
+          </div>
 
-            {/* Contact & Trust */}
-            <div className="space-y-8">
-              <div>
-                <h4 className="font-bold text-[10px] uppercase tracking-[0.3em] text-slate-400 mb-8">
-                  Reach Us
-                </h4>
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4 group cursor-pointer">
-                    <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center group-hover:bg-amber-50 transition-colors">
-                      <Phone
-                        size={18}
-                        className="text-slate-400 group-hover:text-amber-600 transition-colors"
-                      />
-                    </div>
-                    <div>
-                      <p className="text-[10px] text-slate-400 uppercase font-bold tracking-widest">
-                        24/7 Concierge
-                      </p>
-                      <p className="text-sm font-bold text-slate-900">
-                        +91 98765 43210
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4 group cursor-pointer">
-                    <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center group-hover:bg-amber-50 transition-colors">
-                      <ShieldCheck
-                        size={18}
-                        className="text-slate-400 group-hover:text-amber-600 transition-colors"
-                      />
-                    </div>
-                    <div>
-                      <p className="text-[10px] text-slate-400 uppercase font-bold tracking-widest">
-                        Verified Safety
-                      </p>
-                      <p className="text-sm font-bold text-slate-900">
-                        Elite Protocol
-                      </p>
-                    </div>
-                  </div>
+          {/* --- DYNAMIC SEO LINKS SECTION (Full Width Grid) --- */}
+          <div className="pt-16 border-t border-slate-100 mb-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+              {[
+                {
+                  title: "North India Routes",
+                  links: [
+                    "Chandigarh to Delhi",
+                    "Chandigarh to Amritsar",
+                    "Chandigarh to Manali",
+                    "Ludhiana to Delhi",
+                    "Ludhiana to Manali",
+                  ],
+                },
+                {
+                  title: "South & West",
+                  links: [
+                    "Bangalore to Coorg",
+                    "Bangalore to Ooty",
+                    "Mumbai to Shirdi",
+                    "Mumbai to Mahabaleshwar",
+                    "Chennai to Pondicherry",
+                  ],
+                },
+                {
+                  title: "Popular Cabs",
+                  links: [
+                    "Delhi to Agra",
+                    "Delhi to Jaipur",
+                    "Jaipur to Udaipur",
+                    "Lucknow to Varanasi",
+                    "Lucknow to Agra",
+                  ],
+                },
+              ].map((col, i) => (
+                <div key={i} className="space-y-6">
+                  <h4 className="font-bold text-[10px] uppercase tracking-[0.3em] text-slate-400 border-l-2 border-amber-600 pl-4">
+                    {col.title}
+                  </h4>
+                  <ul className="space-y-3 text-slate-600 text-[11px] font-bold">
+                    {col.links.map((link) => (
+                      <li
+                        key={link}
+                        className="hover:text-amber-600 transition-colors cursor-pointer flex items-center gap-2 group"
+                      >
+                        <span className="w-1 h-1 bg-slate-200 group-hover:bg-amber-600 rounded-full transition-colors"></span>
+                        {link}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
 
           {/* Bottom Bar */}
-          <div className="pt-12 border-t border-slate-100">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-              <div className="flex flex-wrap justify-center md:justify-start gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
-                <a href="#" className="hover:text-amber-600 transition-colors">
-                  Privacy
-                </a>
-                <a href="#" className="hover:text-amber-600 transition-colors">
-                  Terms
-                </a>
-                <a href="#" className="hover:text-amber-600 transition-colors">
-                  Sitemap
-                </a>
-              </div>
-
-              <p className="text-slate-400 text-[10px] tracking-widest uppercase text-center font-medium">
-                © 2026 Bansal Travels.{" "}
-                <span className="text-slate-200 mx-2">|</span> Crafted for the{" "}
-                <span className="text-slate-900">Elite</span>.
-              </p>
+          <div className="pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] font-bold uppercase tracking-widest text-slate-400">
+            <div className="flex flex-wrap justify-center gap-8">
+              <a href="#" className="hover:text-amber-600 transition-colors">
+                Privacy
+              </a>
+              <a href="#" className="hover:text-amber-600 transition-colors">
+                Terms
+              </a>
+              <a href="#" className="hover:text-amber-600 transition-colors">
+                Sitemap
+              </a>
             </div>
+            <p className="text-center font-medium">
+              © 2026 Bansal Travels.{" "}
+              <span className="text-slate-200 mx-2">|</span> Crafted for the{" "}
+              <span className="text-slate-900">Elite</span>.
+            </p>
           </div>
         </div>
       </footer>
-
       {/* Floating Mobile Tagline - Updated to be more subtle */}
       <div className="fixed bottom-0 left-0 right-0 bg-white/80 backdrop-blur-md border-t border-slate-100 text-slate-900 py-3 text-center text-[9px] font-black uppercase tracking-[0.4em] z-[100]">
         India moves with <span className="text-amber-600">Bansal Travels</span>{" "}
